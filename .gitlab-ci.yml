@@ -1,0 +1,27 @@
+stages:
+  - test
+
+
+test:api:
+  image: python:3.6.5-alpine
+  stage: test
+
+  variables:
+    FLASK_CI: "1"
+
+  script: 
+    - pip install -r api/requirements.txt
+    - python api/app.py
+
+
+test:frontend:
+  image: node:10-alpine
+
+  stage: test
+
+  script: 
+    - cd frontend
+    - ls
+    - npm install -g yarn
+    - yarn install
+    - yarn build
