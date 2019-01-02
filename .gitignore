@@ -3,5 +3,4 @@ env/
 .vscode
 uploads/
 
-*.json
 *.pyc

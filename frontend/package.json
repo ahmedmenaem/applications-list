@@ -1,0 +1,45 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://127.0.0.1:5000",
+  "dependencies": {
+    "@material-ui/core": "^3.7.1",
+    "@material-ui/icons": "^3.0.1",
+    "@reach/router": "^1.2.1",
+    "@types/jest": "^23.3.10",
+    "@types/material-ui": "^0.21.5",
+    "@types/node": "^10.12.15",
+    "@types/reach__router": "^1.2.2",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
+    "axios": "^0.18.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "tslint 'src/**/*.{ts,tsx}'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "prettier": "^1.15.3",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^3.6.0"
+  }
+}
