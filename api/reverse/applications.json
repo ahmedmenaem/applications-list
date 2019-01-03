@@ -1,1 +1,1 @@
-{"google-chrome": {"name": "google chrome", "versions": {"1.0.0": {"id": "1.0.0", "file": null}}, "id": "google-chrome"}}
+{"google-chrome": {"name": "google chrome", "versions": {"V1.0.0": {"id": "V1.0.0", "file": null}}, "id": "google-chrome"}, "fire-fox": {"name": "fire fox", "versions": {"V0.0.0": {"id": "V0.0.0", "file": null}}, "id": "fire-fox"}}

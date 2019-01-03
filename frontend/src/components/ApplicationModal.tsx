@@ -15,20 +15,20 @@ interface ModalProps {
 
 interface ModalState {
   error: boolean
-  version: string
+  name: string
 }
 
-class VersionModal extends Component<ModalProps, ModalState> {
+class NewAppModal extends Component<ModalProps, ModalState> {
   public state = {
     error: false,
-    version: '',
+    name: '',
   }
 
-  public handleFormSubmit = async (event: React.SyntheticEvent) => {
+  public handleFormSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
-    const { version } = this.state
-    if (version !== '' && version !== undefined && version !== null) {
-      this.props.handleSaveButtonClick(version)
+    const { name } = this.state
+    if (name !== '' && name !== undefined && name !== null) {
+      this.props.handleSaveButtonClick(name)
       this.props.toggleModal()
     } else {
       this.setState(({ error }) => ({
@@ -40,7 +40,7 @@ class VersionModal extends Component<ModalProps, ModalState> {
   public handleTextFieldChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    this.setState({ version: event.target.value })
+    this.setState({ name: event.target.value })
   }
 
   public render() {
@@ -51,15 +51,17 @@ class VersionModal extends Component<ModalProps, ModalState> {
           onClose={this.props.toggleModal}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Add Version</DialogTitle>
+          <DialogTitle id="form-dialog-title">New Application</DialogTitle>
           <form onSubmit={this.handleFormSubmit}>
             <DialogContent>
-              <DialogContentText>Please enter your version.</DialogContentText>
+              <DialogContentText>
+                To add new application, please enter applicatoin name here.
+              </DialogContentText>
               <TextField
                 autoFocus
                 margin="dense"
-                id="application-version"
-                label="Application Version"
+                id="application-name"
+                label="Application Name"
                 type="text"
                 fullWidth
                 required
@@ -71,9 +73,7 @@ class VersionModal extends Component<ModalProps, ModalState> {
               <Button onClick={this.props.toggleModal} color="primary">
                 Cancel
               </Button>
-              <Button color="primary" type="submit">
-                Save
-              </Button>
+              <Button color="primary">Save</Button>
             </DialogActions>
           </form>
         </Dialog>
@@ -82,4 +82,4 @@ class VersionModal extends Component<ModalProps, ModalState> {
   }
 }
 
-export default VersionModal
+export default NewAppModal
