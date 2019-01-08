@@ -43,25 +43,17 @@ export default {
 	},
 
 	uploadVersionFile: async (appId: string, versionId: string, file: any) => {
-		try {
-			let formData = new FormData();
-			formData.append('file', file);
-			const uri = `/api/apps/${appId}/${versionId}/file`;
-			const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-			const response: any = await axios.post(uri, formData, config);
-			return response.data;
-		} catch (ex) {
-
-		}
+		let formData = new FormData();
+		formData.append('file', file);
+		const uri = `/api/apps/${appId}/${versionId}/file`;
+		const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+		const response: any = await axios.post(uri, formData, config);
+		return response.data;
 	},
 
 	downloadVersionFile: async (file: string) => {
-		try {
-			const response: any = await axios.get(file, { responseType: 'blob'});
-			return response.data;
-		} catch (ex) {
-
-		}
+		const response: any = await axios.get(file, { responseType: 'blob'});
+		return response.data;
 		
 	}
 };
